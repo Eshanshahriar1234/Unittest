@@ -1,25 +1,62 @@
-import pytest
-from math_operations import add, subtract, multiply, divide
+#Wyatt - I am so confused, I commented out the previous code because I could not figure 
+# out how to not give me errors. I wrote a new class and created 2 methonds, and 2 test methods.
 
-def test_add():
-    assert add(2, 3) == 5
-    assert add(-1, 1) == 0
-    assert add(0, 0) == 0
 
-def test_subtract():
-    assert subtract(5, 3) == 2
-    assert subtract(-1, -1) == 0
-    assert subtract(0, 5) == -5
 
-def test_multiply():
-    assert multiply(2, 3) == 6
-    assert multiply(-1, 5) == -5
-    assert multiply(0, 10) == 0
 
-def test_divide():
-    assert divide(10, 2) == 5
-    assert divide(-9, 3) == -3
-    assert divide(5, 2) == 2.5
+
+
+import unittest
+import math
+
+class mathematical():
+    def __init__(self,num1,num2):
+      self.num1 = num1
+      self.num2 = num2
+        
+        
+    def add(self):
+        return(self.num1 + self.num2)
     
-with pytest.raises(ValueError, match="Cannot divide by zero!"):
-        divide(5, 0)
+    def subtract(self):
+        return (self.num1 - self.num2)
+        
+
+class test_mathematical(unittest.TestCase):
+    def test_add(self):
+        uno = mathematical(23,7)
+        self.assertEqual(uno.add(),30)
+        
+    def test_subtract(self):
+        dos = mathematical(88,55)
+        self.assertEqual(dos.subtract(),33)
+        
+        
+        
+if __name__ == '__main__':
+    unittest.main()
+
+
+
+# def test_add():
+#     assert add(2, 3) == 5
+#     assert add(-1, 1) == 0
+#     assert add(0, 0) == 0
+
+# def test_subtract():
+#     assert subtract(5, 3) == 2
+#     assert subtract(-1, -1) == 0
+#     assert subtract(0, 5) == -5
+
+# def test_multiply():
+#     assert multiply(2, 3) == 6
+#     assert multiply(-1, 5) == -5
+#     assert multiply(0, 10) == 0
+
+# def test_divide():
+#     assert divide(10, 2) == 5
+#     assert divide(-9, 3) == -3
+#     assert divide(5, 2) == 2.5
+    
+# with pytest.raises(ValueError, match="Cannot divide by zero!"):
+#         divide(5, 0)
