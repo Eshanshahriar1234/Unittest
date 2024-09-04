@@ -20,6 +20,12 @@ class mathematical():
     
     def subtract(self):
         return (self.num1 - self.num2)
+    
+    def multiply(self):
+        return (self.num1 * self.num2)
+    
+    def divide(self):
+        return (self.num1 / self.num2)
         
 
 class test_mathematical(unittest.TestCase):
@@ -31,7 +37,13 @@ class test_mathematical(unittest.TestCase):
         dos = mathematical(88,55)
         self.assertEqual(dos.subtract(),33)
         
+    def test_multiply(self):
+        tres = mathematical(5,7)
+        self.assertEqual(tres.multiply(),35)
         
+    def test_divide(self):
+        cuatro = mathematical(50,10)
+        self.assertEqual(cuatro.divide(),5)
         
 if __name__ == '__main__':
     unittest.main()
